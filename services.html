@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <nav>
+        <h1><a href="index.html">L.Carter</a></h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Book Online</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="services">
+        <div class="servicesleft">
+            <h1>Services</h1>
+            <p>Discover our wide range of pilates services tailored to your meet your needs and help you achive your fitness goals</p>
+        </div>
+        <div class="servicesright">
+            <h2>Our expert instructors are dedicated to providing high-quality classes in a welcoming and supportive environment.</h2>
+            <div class="divider"></div>
+            <div class="classes">
+                <div class="header">
+                    <p>Classes</p>
+                <p>Mat Pilates</p>
+                </div>
+                <p>Join our Mat Pilates classes to strengthen your core, improve flexibility, and enhance overall body alignment.</p>
+            </div>
+            <div class="divider"></div>
+            <div class="classes">
+                <div class="header">
+                    <p>Reformer Pilates</p>
+                <p>Group Sessions</p>
+                </div>
+                <p>Experience the benefits of Reformer Pilates in our group sessions, designed to tone muscles and increase stability.</p>
+            </div>
+            <div class="divider"></div>
+            <div class="classes">
+                <div class="header">
+                    <p>Private Sessions</p>
+                <p>Duo Sessions</p>
+                </div>
+                <p>Indulge in personalized attention with our private Pilates sessions or share the experience with a friend in our duo sessions.</p>
+            </div>
+        </div>
+    </div>
+        <footer>
+        <div class="footerleft">
+            <h1>L.carter</h1>
+        </div>
+        <div class="footercenter">
+            <p>123-456-789</p>
+            <p>Info@mysite.com</p>
+            <p>500 Terry francine St.</p>
+            <p>San francisco, CA 94158</p>
+            <div class="divider"></div>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+            <p><a href="Statement.html">AccessibilityStatement</a></p>
+        </div>
+        <div class="footerright">
+            <form>
+                <p>Connect with us</p>
+                 <div class="field">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="check"><input type="checkbox"><p>Yes, Subscribe me to your newsletter *</p></div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.book, .teext, .sixleft-text, .sixright-text, .formright').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

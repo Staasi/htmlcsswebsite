@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <nav>
+        <h1><a href="index.html">L.Carter</a></h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Book Online</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="discover">
+        <div class="leftdiscover">
+            <p>Our studio</p>
+            <div class="divider top"></div>
+            <h1>Discover our space</h1>
+            <p>Welcome to our Pilates Studio, where we combine modern techniques with a welcoming atmosphere to help you achieve your fitness goals. Our studio is designed to inspire and motivate you on your wellness journey.</p>
+            <div class="divider"></div>
+        </div>
+        <div class="rightdiscover"></div>
+    </div>
+
+
+    <div class="textish">
+        <h3>Meet Our Instructors</h3>
+            <p>Our team of experienced instructors is dedicated to guiding you through your Pilates practice with expertise and passion. Get to know the faces behind the studio.</p>
+    </div>
+    
+
+    <div class="container">
+       
+        
+        <div class="profile profile--left">
+            
+            <div class="profile__image-wrapper">
+                <img src="./Fitness Instructor.avif" alt="Profile 1" class="profile__image">
+            </div>
+            <div class="profile__content">
+                <p class="profile__text">Layla Chen
+
+</p>
+                <p class="profile__text">Wellness Expert</p>
+                <p class="profile__text">Layla's holistic approach to wellness focuses on mind-body connection, helping you find balance and harmony in your Pilates practice and daily life.</p>
+            </div>
+        </div>
+
+        <!-- Profile 2 - Right Side -->
+        <div class="profile profile--right">
+            <div class="profile__image-wrapper">
+                <img src="./Gym Instructor.avif" alt="Profile 2" class="profile__image">
+            </div>
+            <div class="profile__content">
+                <p class="profile__text">Michael Patel</p>
+                <p class="profile__text">Pilates Instructor</p>
+                <p class="profile__text">With years of experience in Pilates instruction, Michael brings a wealth of knowledge and energy to every session, ensuring you get the most out of your workout.</p>
+            </div>
+        </div>
+
+        <!-- Profile 3 - Left Side -->
+        <div class="profile profile--left">
+            <div class="profile__image-wrapper">
+                <img src="./Yogi Sitting on Mat.avif" alt="Profile 3" class="profile__image">
+            </div>
+            <div class="profile__content">
+                <p class="profile__text">Sarah Johnson</p>
+                <p class="profile__text">Nutrition Specialist</p>
+                <p class="profile__text">Sarah's nutritional expertise complements your fitness journey, providing tailored advice to enhance your performance and achieve your health goals.</p>
+            </div>
+        </div>
+
+        <!-- Profile 4 - Right Side -->
+        <div class="profile profile--right">
+            <div class="profile__image-wrapper">
+                <img src="./Yogi with Mat .avif" alt="Profile 4" class="profile__image">
+            </div>
+            <div class="profile__content">
+                <p class="profile__text">Alex Ramirez</p>
+                <p class="profile__text">Fitness Coach</p>
+                <p class="profile__text">Alex's dynamic approach to fitness training will challenge and motivate you to reach new heights in your physical health and overall well-being.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footerleft">
+            <h1>L.carter</h1>
+        </div>
+        <div class="footercenter">
+            <p>123-456-789</p>
+            <p>Info@mysite.com</p>
+            <p>500 Terry francine St.</p>
+            <p>San francisco, CA 94158</p>
+            <div class="divider"></div>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+            <p><a href="Statement.html">AccessibilityStatement</a></p>
+        </div>
+        <div class="footerright">
+            <form>
+                <p>Connect with us</p>
+                 <div class="field">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="check"><input type="checkbox"><p>Yes, Subscribe me to your newsletter *</p></div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </footer>
+
+
+        <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.book, .teext, .sixleft-text, .sixright-text, .formright, .contactsright').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
